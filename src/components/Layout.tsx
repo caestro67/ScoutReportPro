@@ -22,8 +22,8 @@ export function Layout() {
   }
 
   return (
-    <div className="h-screen bg-slate-950 text-slate-200 flex flex-col overflow-hidden">
-      <div className="p-4 md:p-6 flex flex-col h-full">
+    <div className="h-screen bg-slate-950 text-slate-200 flex flex-col overflow-hidden w-full">
+      <div className="p-4 md:p-6 flex flex-col h-full min-w-0 w-full">
         {/* Header Navigation */}
         <header className="flex flex-col xl:flex-row justify-between items-center mb-6 bg-slate-900/50 p-4 rounded-2xl border border-slate-800 gap-4 shrink-0">
           
@@ -94,7 +94,7 @@ export function Layout() {
         </header>
 
         {/* Main content */}
-        <main className="flex-1 overflow-y-auto w-full max-w-7xl mx-auto custom-scrollbar pr-2">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden w-full max-w-7xl mx-auto custom-scrollbar pr-2">
           <Outlet />
         </main>
       </div>

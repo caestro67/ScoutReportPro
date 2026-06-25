@@ -39,8 +39,8 @@ export function InjuryHistoryTable({ injuries, onChange }: Props) {
   };
 
   return (
-    <div className="space-y-6">
-      <div className="overflow-x-auto hide-scrollbar">
+    <div className="space-y-6 w-full max-w-full">
+      <div className="overflow-x-auto hide-scrollbar w-full max-w-full">
         <div className="min-w-[800px]">
           <div className="grid grid-cols-[120px_1fr_150px_120px_1fr_40px] gap-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider pb-2 border-b border-slate-800">
             <div>Fecha</div>

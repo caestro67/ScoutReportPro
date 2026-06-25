@@ -716,32 +716,32 @@ export function Dashboard() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
-        <div className="flex gap-4 items-center">
-          <h1 className="text-2xl font-bold text-slate-200">{t("myReports")}</h1>
-          <div className="flex bg-slate-900 border border-slate-800 rounded-xl p-1 shrink-0">
+      <div className="flex flex-col xl:flex-row gap-4 justify-between items-start xl:items-center w-full">
+        <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center w-full xl:w-auto min-w-0">
+          <h1 className="text-2xl font-bold text-slate-200 shrink-0">{t("myReports")}</h1>
+          <div className="flex bg-slate-900 border border-slate-800 rounded-xl p-1 overflow-x-auto hide-scrollbar w-full sm:w-auto">
             <button
               onClick={() => setViewMode("reports")}
-              className={`px-4 py-1.5 text-sm font-bold rounded-lg transition-colors ${viewMode === "reports" ? "bg-slate-800 text-emerald-400" : "text-slate-400 hover:text-slate-200"}`}
+              className={`px-4 py-1.5 text-sm font-bold rounded-lg transition-colors whitespace-nowrap ${viewMode === "reports" ? "bg-slate-800 text-emerald-400" : "text-slate-400 hover:text-slate-200"}`}
             >
               Reportes
             </button>
             <button
               onClick={() => setViewMode("lineups")}
-              className={`px-4 py-1.5 text-sm font-bold rounded-lg transition-colors ${viewMode === "lineups" ? "bg-slate-800 text-emerald-400" : "text-slate-400 hover:text-slate-200"}`}
+              className={`px-4 py-1.5 text-sm font-bold rounded-lg transition-colors whitespace-nowrap ${viewMode === "lineups" ? "bg-slate-800 text-emerald-400" : "text-slate-400 hover:text-slate-200"}`}
             >
               Onces
             </button>
             <button
               onClick={() => setViewMode("compare")}
-              className={`px-4 py-1.5 text-sm font-bold rounded-lg transition-colors ${viewMode === "compare" ? "bg-slate-800 text-emerald-400" : "text-slate-400 hover:text-slate-200"}`}
+              className={`px-4 py-1.5 text-sm font-bold rounded-lg transition-colors whitespace-nowrap ${viewMode === "compare" ? "bg-slate-800 text-emerald-400" : "text-slate-400 hover:text-slate-200"}`}
             >
               Comparar
             </button>
           </div>
         </div>
         {viewMode === "reports" && (
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-4 w-full xl:w-auto">
             <div className="relative w-full sm:w-64">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Search size={16} className="text-slate-500" />

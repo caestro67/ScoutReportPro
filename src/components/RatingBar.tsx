@@ -8,9 +8,9 @@ interface RatingBarProps {
 
 export function RatingBar({ value, onChange }: RatingBarProps) {
   return (
-    <div className="flex flex-wrap gap-2 items-center">
+    <div className="flex flex-wrap gap-1 sm:gap-2 items-center w-full max-w-full shrink">
       {/* 1 to 5: blocks */}
-      <div className="flex gap-1 mr-2">
+      <div className="flex gap-1 shrink-0">
         {[1, 2, 3, 4, 5].map((num) => {
           const isActive = value >= num;
           // red for 1-3, orange for 4-5
@@ -30,7 +30,7 @@ export function RatingBar({ value, onChange }: RatingBarProps) {
       </div>
 
       {/* 6 to 10: numbered squares */}
-      <div className="flex gap-1">
+      <div className="flex gap-1 shrink-0">
         {[6, 7, 8, 9, 10].map((num) => {
           const isActive = value >= num;
           const colorClass = isActive
