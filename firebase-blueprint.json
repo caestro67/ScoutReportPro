@@ -1,0 +1,99 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile containing language preferences.",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "language": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["email", "createdAt", "updatedAt"]
+    },
+    "UserCategories": {
+      "title": "User Categories",
+      "description": "Customizable criteria for reports",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "categories": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["userId", "categories", "updatedAt"]
+    },
+    "Report": {
+      "title": "Report",
+      "description": "A scouting report for a player.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "playerName": { "type": "string" },
+        "matchType": { "type": "string" },
+        "matchDate": { "type": "string" },
+        "performance": { "type": "object" },
+        "injuries": { "type": "object" },
+        "psychological": { "type": "object" },
+        "createdAt": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["userId", "playerName", "createdAt", "updatedAt"]
+    },
+    "List": {
+      "title": "List",
+      "description": "A custom list of players.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "playerNames": { 
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["name", "playerNames", "createdAt"]
+    },
+    "Lineup": {
+      "title": "Lineup",
+      "description": "A starting XI lineup.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "formation": { "type": "string" },
+        "players": {
+          "type": "object",
+          "description": "Map of position index (0-10) to playerName"
+        },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["name", "formation", "players", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "Store users"
+    },
+    "users/{userId}/configs/{configId}": {
+      "schema": { "$ref": "#/entities/UserCategories" },
+      "description": "User custom report configuration"
+    },
+    "users/{userId}/reports/{reportId}": {
+      "schema": { "$ref": "#/entities/Report" },
+      "description": "Scouting reports for players"
+    },
+    "users/{userId}/lists/{listId}": {
+      "schema": { "$ref": "#/entities/List" },
+      "description": "Custom lists of players"
+    },
+    "users/{userId}/lineups/{lineupId}": {
+      "schema": { "$ref": "#/entities/Lineup" },
+      "description": "Custom starting XI lineups"
+    }
+  }
+}
