@@ -43,7 +43,7 @@ export function MultimediaSection({ videos, onChange }: MultimediaSectionProps) 
         </h3>
         
         <div className="space-y-4">
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
                 <div className="flex-1 space-y-2">
                     <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Título</label>
                     <input

@@ -8,7 +8,7 @@ interface RatingBarProps {
 
 export function RatingBar({ value, onChange }: RatingBarProps) {
   return (
-    <div className="flex gap-1 items-center">
+    <div className="flex flex-wrap gap-2 items-center">
       {/* 1 to 5: blocks */}
       <div className="flex gap-1 mr-2">
         {[1, 2, 3, 4, 5].map((num) => {

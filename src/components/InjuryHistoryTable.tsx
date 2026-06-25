@@ -40,24 +40,26 @@ export function InjuryHistoryTable({ injuries, onChange }: Props) {
 
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-[120px_1fr_150px_120px_1fr_40px] gap-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider pb-2 border-b border-slate-800">
-        <div>Fecha</div>
-        <div>Región</div>
-        <div>Tipo</div>
-        <div>Duración</div>
-        <div>Descripción</div>
-        <div></div>
-      </div>
+      <div className="overflow-x-auto hide-scrollbar">
+        <div className="min-w-[800px]">
+          <div className="grid grid-cols-[120px_1fr_150px_120px_1fr_40px] gap-4 text-[10px] font-bold text-slate-500 uppercase tracking-wider pb-2 border-b border-slate-800">
+            <div>Fecha</div>
+            <div>Región</div>
+            <div>Tipo</div>
+            <div>Duración</div>
+            <div>Descripción</div>
+            <div></div>
+          </div>
 
-      <div className="flex flex-col gap-2">
-        {injuries.length === 0 && (
-          <p className="text-sm text-slate-500 italic py-4">No hay lesiones registradas.</p>
-        )}
-        {injuries.map(inj => (
-          <div key={inj.id} className="grid grid-cols-[120px_1fr_150px_120px_1fr_40px] gap-4 items-center text-sm text-slate-300 bg-slate-950/50 p-3 rounded-xl border border-slate-800/50">
-            <div>{inj.date}</div>
-            <div className="font-medium text-slate-200">{inj.region}</div>
-            <div>
+          <div className="flex flex-col gap-2 mt-2">
+            {injuries.length === 0 && (
+              <p className="text-sm text-slate-500 italic py-4">No hay lesiones registradas.</p>
+            )}
+            {injuries.map(inj => (
+              <div key={inj.id} className="grid grid-cols-[120px_1fr_150px_120px_1fr_40px] gap-4 items-center text-sm text-slate-300 bg-slate-950/50 p-3 rounded-xl border border-slate-800/50">
+                <div>{inj.date}</div>
+                <div className="font-medium text-slate-200">{inj.region}</div>
+                <div>
               <span className="px-2 py-1 bg-red-500/10 text-red-400 text-xs rounded-lg border border-red-500/20">{inj.type}</span>
             </div>
             <div>{inj.duration ? `${inj.duration} Días` : '—'}</div>
@@ -72,9 +74,11 @@ export function InjuryHistoryTable({ injuries, onChange }: Props) {
           </div>
         ))}
       </div>
+      </div>
+      </div>
 
       <div className="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-4">
-        <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)_minmax(0,1fr)_120px_auto] gap-4 items-end">
+        <div className="flex flex-col sm:grid sm:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)_minmax(0,1fr)_120px_auto] gap-4 sm:items-end">
           <div className="space-y-2">
             <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider">Fecha</label>
             <div className="relative">

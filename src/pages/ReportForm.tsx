@@ -467,7 +467,7 @@ export function ReportForm() {
               <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">
                 Foto del Jugador
               </label>
-              <div className="flex gap-4 items-center">
+              <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
                 <input
                   type="text"
                   value={report.imageUrl || ""}
