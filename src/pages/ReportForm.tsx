@@ -327,7 +327,7 @@ export function ReportForm() {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-4">
                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">
                   {t("age")}
@@ -361,7 +361,7 @@ export function ReportForm() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-4">
                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">
                   {t("club")}
@@ -391,7 +391,7 @@ export function ReportForm() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-4">
                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">
                   {t("height")}
@@ -429,7 +429,7 @@ export function ReportForm() {
               </select>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-4">
                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">
                   {t("foot")}
