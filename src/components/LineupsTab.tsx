@@ -305,9 +305,9 @@ export function LineupsTab({ reports }: { reports: Report[] }) {
           <div className="h-96 bg-slate-900 rounded-3xl rounded-xl"></div>
         </div>
       ) : activeLineup ? (
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 w-full min-w-0">
           {/* Pitch UI */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 w-full min-w-0">
              <div ref={pitchRef} className="relative w-full aspect-[3/4] sm:aspect-[16/9] lg:aspect-[4/3] min-h-[400px] bg-emerald-800 rounded-[20px] overflow-hidden border-4 border-slate-900 shadow-xl p-4 sm:p-8 flex flex-col justify-between"
                   style={{
                     backgroundColor: "#065f46",

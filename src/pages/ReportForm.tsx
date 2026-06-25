@@ -302,9 +302,9 @@ export function ReportForm() {
         </button>
       </div>
 
-      <div className="grid md:grid-cols-12 gap-6 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start w-full">
         {/* Left Column: Player Info */}
-        <div className="md:col-span-4 flex flex-col gap-6">
+        <div className="md:col-span-4 flex flex-col gap-6 min-w-0 w-full">
           <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 shadow-sm space-y-6">
             <div className="border-b border-slate-800 pb-3">
               <h2 className="text-xs font-black uppercase tracking-[0.2em] text-slate-500">
@@ -574,8 +574,8 @@ export function ReportForm() {
         </div>
 
         {/* Right Column: Dynamic Attributes */}
-        <div className="md:col-span-8 flex flex-col gap-6">
-          <div className="flex bg-slate-900 border border-slate-800 rounded-2xl p-1 gap-1 overflow-x-auto hide-scrollbar">
+        <div className="md:col-span-8 flex flex-col gap-6 min-w-0 w-full">
+          <div className="flex bg-slate-900 border border-slate-800 rounded-2xl p-1 gap-1 overflow-x-auto hide-scrollbar w-full">
             {(
               [
                 "performance",
@@ -595,7 +595,7 @@ export function ReportForm() {
             ))}
           </div>
 
-          <div className="bg-slate-900 p-6 rounded-3xl border border-slate-800 shadow-sm min-h-[500px]">
+          <div className="bg-slate-900 p-4 sm:p-6 rounded-3xl border border-slate-800 shadow-sm min-h-[500px] w-full min-w-0">
             <div className="flex justify-between items-center mb-6 border-b border-slate-800 pb-3">
               <h2 className="text-xs font-black uppercase tracking-[0.2em] text-slate-500">
                 {t(activeTab)}
@@ -657,13 +657,13 @@ export function ReportForm() {
                               {items.map((crit) => (
                                 <div
                                   key={crit.id}
-                                  className="bg-slate-950 p-4 border border-slate-800 rounded-2xl flex flex-col gap-2 transition-colors hover:border-emerald-500/30"
+                                  className="bg-slate-950 p-4 border border-slate-800 rounded-2xl flex flex-col gap-2 transition-colors hover:border-emerald-500/30 w-full min-w-0"
                                 >
-                                  <div className="flex justify-between items-center mb-1">
-                                    <label className="text-sm font-bold text-slate-300">
+                                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-1">
+                                    <label className="text-sm font-bold text-slate-300 break-words line-clamp-2">
                                       {crit.name}
                                     </label>
-                                    <span className="text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-md text-xs">
+                                    <span className="text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-md text-xs self-start sm:self-auto shrink-0">
                                       {report.performance?.[crit.id]?.value ||
                                         "5"}
                                       /10
@@ -731,14 +731,14 @@ export function ReportForm() {
                                 return (
                                   <div
                                     key={crit.id}
-                                    className="p-3 rounded-2xl bg-slate-950/50 border border-slate-800/50 flex flex-col md:flex-row md:items-center justify-between gap-4 transition-colors hover:border-slate-700"
+                                    className="p-3 rounded-2xl bg-slate-950/50 border border-slate-800/50 flex flex-col xl:flex-row xl:items-center justify-between gap-4 transition-colors hover:border-slate-700 w-full min-w-0"
                                   >
-                                    <div className="flex items-center gap-3">
+                                    <div className="flex items-start xl:items-center gap-3 min-w-0">
                                       <Star
                                         size={14}
-                                        className="text-slate-600"
+                                        className="text-slate-600 mt-1 xl:mt-0 shrink-0"
                                       />
-                                      <label className="text-sm font-bold text-slate-200">
+                                      <label className="text-sm font-bold text-slate-200 break-words line-clamp-2">
                                         {crit.name}
                                       </label>
                                     </div>

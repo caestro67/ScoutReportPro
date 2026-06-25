@@ -880,8 +880,8 @@ export function Dashboard() {
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          <div className="md:col-span-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 w-full min-w-0">
+          <div className="md:col-span-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3 w-full min-w-0">
             {(Object.entries(groupedReports) as [string, Report[]][]).map(
               ([playerName, playerReports]) => {
                 const latestReport = playerReports[0];
