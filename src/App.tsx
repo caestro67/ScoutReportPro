@@ -11,6 +11,7 @@ import { Login } from './pages/Login';
 import { Dashboard } from './pages/Dashboard';
 import { ReportForm } from './pages/ReportForm';
 import { Settings } from './pages/Settings';
+import { Analytics } from '@vercel/analytics/react';
 import './lib/i18n';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
@@ -34,6 +35,7 @@ export default function App() {
             <Route path="settings" element={<Settings />} />
           </Route>
         </Routes>
+        <Analytics />
       </BrowserRouter>
     </AuthProvider>
   );

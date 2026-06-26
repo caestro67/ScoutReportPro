@@ -8,9 +8,9 @@ interface RatingBarProps {
 
 export function RatingBar({ value, onChange }: RatingBarProps) {
   return (
-    <div className="flex flex-wrap gap-1 sm:gap-2 items-center w-full max-w-full shrink">
+    <div className="flex flex-wrap gap-1 sm:gap-2 items-center w-full min-w-0">
       {/* 1 to 5: blocks */}
-      <div className="flex gap-1 shrink-0">
+      <div className="flex gap-1">
         {[1, 2, 3, 4, 5].map((num) => {
           const isActive = value >= num;
           // red for 1-3, orange for 4-5
@@ -23,14 +23,14 @@ export function RatingBar({ value, onChange }: RatingBarProps) {
               key={num}
               type="button"
               onClick={() => onChange(num)}
-              className={`w-6 h-6 rounded border transition-all ${colorClass}`}
+              className={`w-5 h-5 sm:w-6 sm:h-6 rounded border transition-all ${colorClass}`}
             />
           );
         })}
       </div>
 
       {/* 6 to 10: numbered squares */}
-      <div className="flex gap-1 shrink-0">
+      <div className="flex gap-1">
         {[6, 7, 8, 9, 10].map((num) => {
           const isActive = value >= num;
           const colorClass = isActive
@@ -42,7 +42,7 @@ export function RatingBar({ value, onChange }: RatingBarProps) {
               key={num}
               type="button"
               onClick={() => onChange(num)}
-              className={`w-6 h-6 rounded border text-[10px] font-bold flex items-center justify-center transition-all ${colorClass}`}
+              className={`w-5 h-5 sm:w-6 sm:h-6 rounded border text-[9px] sm:text-[10px] font-bold flex items-center justify-center transition-all ${colorClass}`}
             >
               {num}
             </button>
